@@ -15,7 +15,7 @@ docker-compose build
 docker-compose up -d
 
 docker-compose ps
-docker-compose exec app composer install # 多分。redisとりあえず使わないし、このコマンドは打たなくてもいい
+docker-compose exec app composer install
 ```
 
 http://127.0.0.1:10080
