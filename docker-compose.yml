@@ -16,10 +16,10 @@ services:
     working_dir: /work
     environment:
       - DB_CONNECTION=mysql
-      - DB_HOST=db
-      - DB_DATABASE=${DB_NAME:-homestead}
-      - DB_USERNAME=${DB_USER:-homestead}
-      - DB_PASSWORD=${DB_PASS:-secret}
+      - DB_HOST=127.0.0.1
+      - DB_DATABASE=TodoListApp
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
       - TZ=${TZ:-Asia/Tokyo}
       - MAIL_HOST=${MAIL_HOST:-mail}
       - MAIL_PORT=${MAIL_PORT:-1025}
@@ -48,13 +48,13 @@ services:
       - ./logs:/var/log/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     environment:
-      - MYSQL_DATABASE=${DB_NAME:-homestead}
-      - MYSQL_USER=${DB_USER:-homestead}
-      - MYSQL_PASSWORD=${DB_PASS:-secret}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
+      - MYSQL_DATABASE=TodoListApp
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=secret
       - TZ=${TZ:-Asia/Tokyo}
     ports:
-      - ${DB_PORT:-13306}:3306
+      - 3306:3306
 
   # db-testing:
   #   image: mysql:8.0
